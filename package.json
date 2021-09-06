@@ -11,7 +11,7 @@
     "nodemon": "^2.0.12"
   },
   "scripts": {
-    "test": "mocha",
+    "test": "mocha *.test.js",
     "start": "node server.js",
     "local": "nodemon server.js"
   },
