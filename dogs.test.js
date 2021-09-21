@@ -8,7 +8,7 @@ describe('Dog validateAge', () => {
  });
 
  it('should return true for age 1', () => {
-  assert.equal(true, validateAgeParameter(1))
+  assert.equal(false, validateAgeParameter(1))
  });
 
  it('should return false for age 0', () => {
