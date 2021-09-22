@@ -3,10 +3,13 @@ const dogs = require('./dogs')
 const app = express()
 const port = 3000
 
-app.get('/dogs', ({ query: { age = 1 } }, res) => {
-  age = Number(age)
-  if (!dogs.validateAgeParameter(age)) res.status(400).send({ 'error': 'Bad request - invalid age parameter'})
-  res.status(200).send(dogs.findDogs(age));
+app.get('/dogs', ({ query: { minAge = 1 } }, res) => {
+  minAge = Number(minAge)
+  if (!dogs.validateAgeParameter(minAge))  {
+    res.status(400).send({ 'error': 'Bad request - invalid minAge parameter'})
+  } else {
+    res.status(200).send(dogs.findDogs(minAge));
+  } 
 })
 
 app.get('/dogs/:id', (req, res) => {
