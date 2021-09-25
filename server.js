@@ -19,8 +19,12 @@ app.get('/dogs', ({ query: { minAge = 1 } }, res) => {
 
 app.get('/dogs/:id', (req, res) => {
   dog = dogs.findDogById(req.params.id);
-  if (!dog) res.status(404).send({ 'error': 'Dog not found'})
-  res.status(200).send(dog);
+  if (!dog) { 
+    res.status(404).send({ 'error': 'Dog not found'})  
+  } else {
+    res.status(200).send(dog);
+  }
+  
 })
 
 app.listen(port, () => {
