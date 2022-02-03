@@ -3,10 +3,10 @@ const dogs = require('./dogs')
 const app = express()
 const port = 3000
 
-var apm = require('elastic-apm-node').start({
-  serviceName: 'dogsapp',
-  serverUrl: 'http://localhost:8200'
-})
+// var apm = require('elastic-apm-node').start({
+//   serviceName: 'dogsapp',
+//   serverUrl: 'http://localhost:8200'
+// })
 
 app.get('/dogs', ({ query: { minAge = 1 } }, res) => {
   minAge = Number(minAge)

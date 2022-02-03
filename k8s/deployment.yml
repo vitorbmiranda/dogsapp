@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: dogsapp
+  labels:
+    app: dogsapp
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: dogsapp
+  template:
+    metadata:
+      labels:
+        app: dogsapp
+    spec:
+      containers:
+      - name: dogsapp
+        image: dogsapp:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 3000
