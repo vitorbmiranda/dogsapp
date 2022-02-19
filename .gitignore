@@ -122,4 +122,8 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-# End of https://www.toptal.com/developers/gitignore/api/node
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
