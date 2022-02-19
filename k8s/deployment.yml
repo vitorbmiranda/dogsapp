@@ -1,11 +1,11 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
   name: dogsapp
   labels:
     app: dogsapp
 spec:
-  replicas: 5
+  replicas: 10
   selector:
     matchLabels:
       app: dogsapp
